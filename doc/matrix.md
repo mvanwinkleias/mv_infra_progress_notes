@@ -3,10 +3,26 @@
 This documents the overall process of making examples for different programming
 languages that fit within the basic infrastructure setup.
 
+## Package System Features
+
+* RPM / Directory traversal so permissions for different users can be used
+
+## Packaging System Support I'd Like to Add
+
+* Brew
+* Chocolatey (sp)
+
+## Languages I'd Like to Add
+
+* C/C++
+* Java
+* Ruby
+
 ## Project Layout and Installation
 <table>
 <tr>
 <td>&nbsp;</td>
+<th>Installs via. Package (RPM, Deb)</td>
 <th>Single Command Compiles / Runs in src dir</th>
 <th>Works with "local" libraries</th>
 <th>Works with "internal" libraries</th>
@@ -14,7 +30,19 @@ languages that fit within the basic infrastructure setup.
 <th>"Standard" Automated Tests</th>
 
 <tr>
+	<td>Bash</td>
+	<td>Yes.</td>
+	<td>Yes.</td>
+	<td>Yes.</td>
+	<td>Yes.</td>
+	<td>Yes.</td>
+	<td>N/A.</td>
+</tr>
+
+
+<tr>
 	<td>Perl</td>
+	<td>Yes.</td>
 	<td>Yes.</td>
 	<td>Yes.</td>
 	<td>Yes.</td>
@@ -24,13 +52,15 @@ languages that fit within the basic infrastructure setup.
 </tr>
 
 <tr>
-	<td>Bash</td>
+	<td>Python</td>
 	<td>Yes.</td>
 	<td>Yes.</td>
 	<td>Yes.</td>
 	<td>Yes.</td>
-	<td>N/A.</td>
+	<td>Yes.</td>
+	<td>Yes.</td>
 </tr>
+
 </table>
 
 ### Notes
@@ -48,10 +78,12 @@ the code ISN'T tested, it just means that standard tests aren't working yet.
 
 <table>
 <tr>
+	<td>&nbsp;</td>
 	<th colspan=2>Layout Knowledge</th>
 	<th colspan=1>Logging</th>
 	<th colspan=2>Silent When Cron'd</th>
 <tr>
+	<td>&nbsp;</td>
 	<th>Detects whether running inside of src dir and handles things appropriately</th>
 	<td>Methods</td>
 	<th>Logs to Syslog</th>
@@ -59,17 +91,6 @@ the code ISN'T tested, it just means that standard tests aren't working yet.
 	<th>Debug Message Suppression</th>
 </tr>
 
-<tr>
-	<td>Perl</td>
-	<td>
-		Class method call:<br>
-		$self->input_dir() etc.
-		perldoc FullProjectPaths.pm
-	</td>
-	<td>Yes.</td>
-	<td>Yes.</td>
-	<td>Yes.</td>
-</tr>
 <tr>
 	<td>Bash</td>
 	<td>Yes.</td>
@@ -81,6 +102,32 @@ the code ISN'T tested, it just means that standard tests aren't working yet.
 	<td>Yes.</td>
 	<td>Yes.</td>
 </tr>
+
+
+<tr>
+	<td>Perl</td>
+	<td>Yes.</td>
+	<td>
+		Class method call:<br>
+		$self->input_dir() etc.
+		perldoc FullProjectPaths.pm
+	</td>
+	<td>Yes.</td>
+	<td>Yes.</td>
+	<td>Yes.</td>
+</tr>
+<tr>
+	<td>Python</td>
+	<td>Pending.</td>
+	<td>
+		Pending.
+	</td>
+	<td>Pending.</td>
+	<td>Pending.</td>
+	<td>Pending.</td>
+</tr>
+
+
 </table>
 
 # Example Applications
