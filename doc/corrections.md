@@ -15,7 +15,7 @@ Mostly this is just the Makefile.
 ## Logger::Syslog
 
 <pre>man 3 syslog</pre>
-shows different severities than what the module implements.
+shows different serveries than what the module implements.
 
 * Emergency is missing
 * "critic" is named incorrectly
