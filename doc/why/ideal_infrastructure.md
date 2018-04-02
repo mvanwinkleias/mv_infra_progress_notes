@@ -2,7 +2,7 @@
 
 Idealism can be troublesome when it prevents work from being done.
 
-That said, there are many ideals that should be tended toward:
+That said, there are many ideals that _should_ be tended toward:
 
 * Fewer dependencies
 * Automation (legitimate automation...)
@@ -10,7 +10,7 @@ That said, there are many ideals that should be tended toward:
 * Reliability
 * As simple as reasonable, but no simpler
 
-When you consider the bullet points above in the middle of your work you might find that it involves more work.  Advocating for idealism for somebody _else's_ work without having solutions seems meddlesome.
+When you consider the bullet points above in the middle of your work you might find that it involves more work.  Advocating for idealism in somebody _else's_ work without having solutions can be  meddlesome... BUT:  __The end-to-end system exists and has been documented.__
 
 # Ideal Computing Infrastructure
 
@@ -23,7 +23,7 @@ Ideally, nothing should:
 * be in production that isn't in a "configuration management system" or in a "package".
 * go into production that isn't "tagged".
 * be tagged that isn't in an
-	* "Artifact Repository"
+	* "Artifact Repository" or
 	* "Revision control System"
 
 The differences between Artifact Repository and Configuration Management System can sometimes be blurred.  We will not discuss the blurryness here, as this will focus on packaging.
@@ -97,14 +97,52 @@ Example:
 
 # An Ideal Workflow
 
-One should be able to easily:
+This is how stuff _should_ work.  Of course, practice and theory are different.
 
-* create the support files that create a package.
-* import the support files into a revision control system.
-* (maybe not so easy) Develop!
-* build the package.
-* import a package into a package repository.
-* install a package.
+## Create Source Tree Layout
+
+In general the process should be:
+
+* Run a command.
+* Answer questions.
+* Check in to revision control.
+
+That is all.  Anything more complicated and somebody's screwing something up.
+
+## Development
+
+* Obtain a copy (check out, clone, etc) of the project.
+* Follow documented procedures for setting up development environment.
+	* Install packages.
+	* Configure.
+* Follow whatever software development methodology you want, but use revision control.
+
+## Releases
+
+1.  Update changelog, and commit it.
+1.  Tag for release.
+
+## Building
+
+1.  Install packages.
+1.  Run a (documented) command.
+1.  Put package in repo.  Go to 1 if more is needed.
+
+That is all.  Anything more complicated and somebody's screwing something up.
+
+## Deployment
+
+* Install package.
+
+That is all.  Anything more complicated and somebody's screwing something up.
+
+You may notice that I used "singular" package there; and I'm being truthful.  It should be possible to easily create a package that contains dependencies for multiple packages.
+
+## A Note on Configuration Management
+
+Modifying files outside of using packages is not covered here.
+
+# Workflow Expansion
 
 ## Development Cycle
 
